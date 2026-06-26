@@ -14,8 +14,7 @@ def analysis_trip(weather, hour) -> dict:
     #Puxando dados de horário
     local_hour = hour["current_time"]
 
-    #Criando uma variável para guardar o horario em formato INT
-    #para usar na comparação abaixo
+    #Criando uma variável para guardar o horario em formato INT para usar na comparação abaixo
     hour_int_to_comper = int(local_hour.split(":")[0])
 
 
@@ -23,11 +22,11 @@ def analysis_trip(weather, hour) -> dict:
 
 
     #Temperatura
-    if temp >= 30:
+    if temp > 29:
         temp_status = "Muito quente"
-    elif temp >= 24:
+    elif temp > 20:
         temp_status = "Agradável"
-    elif temp <= 23:
+    elif temp <= 20:
         temp_status = "Frio"
 
     #Sensação térmica
@@ -72,7 +71,7 @@ def analysis_trip(weather, hour) -> dict:
     if temp < 32 and rain == 0:
         tourism_status = "Bom para passeios"
     else:
-        tourism_status = "Clima desfavorável"
+        tourism_status = "Desfavorável para passeios"
 
 
     return{
