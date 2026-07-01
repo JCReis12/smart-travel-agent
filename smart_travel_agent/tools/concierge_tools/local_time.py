@@ -25,7 +25,7 @@ def get_local_time(city: str) -> dict:
         "roma": "Europe/Rome",
         "milao": "Europe/Rome",
         "firenze": "Europe/Rome",
-        "venezia": "Europe/Rome",
+        "veneza": "Europe/Rome",
         "madrid": "Europe/Madrid",
         "barcelona": "Europe/Madrid",
         "sevilha": "Europe/Madrid",

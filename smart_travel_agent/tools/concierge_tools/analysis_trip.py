@@ -1,5 +1,5 @@
-from .local_weather import get_weather
-from .local_time import get_local_time
+from smart_travel_agent.tools.concierge_tools.local_weather import get_weather
+from smart_travel_agent.tools.concierge_tools.local_time import get_local_time
 
 
 def analysis_trip(weather, hour) -> dict:
@@ -16,9 +16,6 @@ def analysis_trip(weather, hour) -> dict:
 
     #Criando uma variável para guardar o horario em formato INT para usar na comparação abaixo
     hour_int_to_comper = int(local_hour.split(":")[0])
-
-
-
 
 
     #Temperatura
