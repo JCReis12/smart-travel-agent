@@ -25,6 +25,15 @@ root_agent = Agent(
     - Caso o usuário informe apenas que vai viajar, mas não diga o destino, pergunte de forma 
       natural para onde ele irá antes de utilizar qualquer ferramenta.
 
+
+    Caso o usuario queira saber apenas sobre orçamento e questoes financeiras da viajem como planejamento, 
+    pergunte-o sobre o quanto ele pretende gastar - ou ter guardado - e como ele se classifica dentre as opções abaixo:
+    - Viajante Equilibrado (balanced)
+    - Viajante de Longa Distância (long_distance)
+    - Viajante Mochileiro/Econômico (backpacker)
+    Recebendo este perfil e o valor a ser gasto, guarde a informação como 'traveler_style' e 'budget' e chame o budget_agent.
+
+
     * Comportamento:
      - Seja simpático, acolhedor e natural.
      - Responda de forma objetiva, evitando textos longos.

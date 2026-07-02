@@ -1,5 +1,14 @@
 # pyrefly: ignore [missing-import]
 from google.adk.agents import Agent
+from smart_travel_agent.tools.budget_tools.spending_plan import balanced_plan, long_distance_plan, backpacker_plan
+
+def get_traveler_profil(traveler_style, budget):
+    if traveler_style == 'balanced':
+        return balanced_plan(budget)
+    elif traveler_style == 'long_distance':
+        return long_distance_plan(budget)
+    elif traveler_style == 'backpacker':
+        return backpacker_plan(budget)
 
 root_agent = Agent(
     model='gemini-3.1-flash-lite',
@@ -8,9 +17,8 @@ root_agent = Agent(
     instruction='''
     Você é um especialista em finanças de viagens.
     
-    Recebendo do concierge o destino do usuário você deve informar uma estimativa de gastos
-    para a viagem.
+    Recebendo do concierge o destino do usuário você deve informar uma estimativa de gastos para a viagem.
     ''',
-    tools=[]
+    tools=[balanced_plan, long_distance_plan, backpacker_plan]
 )
 
