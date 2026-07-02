@@ -6,7 +6,10 @@ root_agent = Agent(
     name='budget_agent',
     description='Assistente financeiro de viagens.',
     instruction='''
-
+    Você é um especialista em finanças de viagens.
+    
+    Recebendo do concierge o destino do usuário você deve informar uma estimativa de gastos
+    para a viagem.
     ''',
     tools=[]
 )

@@ -6,7 +6,10 @@ root_agent = Agent(
     name='flights_agent',
     description='Assistente que busca e recomenda voos para uma viagem.',
     instruction='''
+    Você é um especialista em buscar e recomendar voos para uma viagem.
 
+    Recebendo do concierge o destino do usuário você deve informar uma média de preços 
+    de voos para o destino, e 1 escala possível muito popular e barata.
     ''',
     tools=[]
 )
