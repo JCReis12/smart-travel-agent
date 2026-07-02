@@ -1,11 +1,17 @@
 # pyrefly: ignore [missing-import]
 from google.adk.agents import Agent
+# pyrefly: ignore [missing-import]
+from google.adk.tools import AgentTool
 from smart_travel_agent.tools.concierge_tools.recomendation_trip import recomendation_trip
+from smart_travel_agent.agents.itinerary_agent import root_agent as itinerary_agent
+from smart_travel_agent.agents.flights_agent import root_agent as flights_agent
+from smart_travel_agent.agents.hotels_agent import root_agent as hotels_agent
+from smart_travel_agent.agents.budget_agent import root_agent as budget_agent
 
 root_agent = Agent(
     model='gemini-3.1-flash-lite',
     name='concierge_agent',
-    description='Assistente que analisa e recomenda o planejamente de uma viagem.',
+    description='Assistente central de viagens, especialista em dar recomendacoes e delegar tarefas para os outros agentes.',
     instruction='''
 
     Você é um assistente de viagens especializado em fornecer recomendações personalizadas para quem vai viajar.
@@ -36,6 +42,12 @@ root_agent = Agent(
 
     ''',
 
-    tools=[recomendation_trip]
+    tools=[
+        recomendation_trip,
+        AgentTool(itinerary_agent),
+        AgentTool(flights_agent),
+        AgentTool(hotels_agent),
+        AgentTool(budget_agent)
+    ]
 )
 
