@@ -1,6 +1,7 @@
 # pyrefly: ignore [missing-import]
 from google.adk.agents import Agent
 from smart_travel_agent.tools.budget_tools.spending_plan import balanced_plan, long_distance_plan, backpacker_plan
+from smart_travel_agent.tools.budget_tools.currency_conversion import currency_conversion
 
 def get_traveler_profil(traveler_style, budget):
     if traveler_style == 'balanced':
@@ -19,6 +20,11 @@ root_agent = Agent(
     
     Recebendo do concierge o destino do usuário você deve informar uma estimativa de gastos para a viagem.
     ''',
-    tools=[balanced_plan, long_distance_plan, backpacker_plan]
+    tools=[
+        balanced_plan,
+        long_distance_plan,
+        backpacker_plan,
+        currency_conversion  # Inativa
+    ]
 )
 
