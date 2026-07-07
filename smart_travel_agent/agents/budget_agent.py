@@ -19,12 +19,17 @@ root_agent = Agent(
     Você é um especialista em finanças de viagens.
     
     Recebendo do concierge o destino do usuário você deve informar uma estimativa de gastos para a viagem.
+    
+    Se o usuário pedir para converter moedas, utilize a ferramenta currency_conversion, pedindo que ele informe a moeda do destino(currency_destination), a moeda local dele(currency_local) e quanto de dinheiro deve ser convertido(amount):
+    - Caso ele informe tudo, apenas prossiga a operação e retorne o resultado.
+    - Caso ele não informe algo, peça o que falta.
+
     ''',
     tools=[
         balanced_plan,
         long_distance_plan,
         backpacker_plan,
-        currency_conversion  # Inativa
+        currency_conversion
     ]
 )
 
