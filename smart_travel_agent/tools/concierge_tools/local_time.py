@@ -14,6 +14,7 @@ def get_local_time(city: str) -> dict:
         "cancun": "America/Cancun",
         "rio de janeiro": "America/Sao_Paulo",
         "sao paulo": "America/Sao_Paulo",
+        "santiago": "America/Santiago",
         "buenos aires": "America/Argentina/Buenos_Aires",
         "cusco": "America/Lima",
         "cartagena": "America/Bogota",
