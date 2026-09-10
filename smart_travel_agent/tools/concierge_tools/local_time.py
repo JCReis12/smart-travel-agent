@@ -3,7 +3,6 @@ import pytz
 
 def get_local_time(city: str) -> dict:
 
-    '''
     timezones = {
         "miami": "America/New_York",
         "new york": "America/New_York",
@@ -67,7 +66,6 @@ def get_local_time(city: str) -> dict:
         "marrakech": "Africa/Casablanca",
         "cape town": "Africa/Johannesburg"
     }
-    '''
 
     city_lower = city.lower()
 
