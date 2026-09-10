@@ -1,7 +1,10 @@
 import requests
+from data.concierge_data_loaders.coordinates_loader import get_coordinates
 
 
 def get_weather(latitude: float, longitude: float) -> dict:
+
+    # ARRUMAR # coordinates = get_coordinates(city)
 
     weather_url = (
         
